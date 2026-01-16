@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ include "dnet31-app-pplne-stage-edit.fullname" . }}
+  labels:
+    {{- include "dnet31-app-pplne-stage-edit.labels" . | nindent 4 }}
+spec:
+  type: {{ .Values.service.type }}
+  ports:
+    - port: {{ .Values.service.port }}
+      targetPort: http
+      protocol: TCP
+      name: http
+  selector:
+    {{- include "dnet31-app-pplne-stage-edit.selectorLabels" . | nindent 4 }}

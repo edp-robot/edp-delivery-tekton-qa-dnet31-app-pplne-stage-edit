@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: "{{ include "dnet31-app-pplne-stage-edit.fullname" . }}-test-connection"
+  labels:
+    {{- include "dnet31-app-pplne-stage-edit.labels" . | nindent 4 }}
+  annotations:
+    "helm.sh/hook": test-success
+spec:
+  containers:
+    - name: wget
+      image: busybox
+      command: ['wget']
+      args: ['{{ include "dnet31-app-pplne-stage-edit.fullname" . }}:{{ .Values.service.port }}']
+  restartPolicy: Never
