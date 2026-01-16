@@ -1,0 +1,11 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UserSecretsId>57393389627611478466</UserSecretsId>
+    <Version>0.0.1</Version>
+    <DeployableModule>aspnetapp</DeployableModule>
+    <IsPackable>true</IsPackable>
+  </PropertyGroup>
+
+</Project>
